@@ -1,7 +1,14 @@
 import axios from "axios"
-import {} from "react-native-dotenv"
+import {
+  CONNECTOR_SNEH_USERNAME,
+  CONNECTOR_SNEH_PASSWORD
+} from "react-native-dotenv"
 const connectorSneh = axios.create({
   baseURL: "https://abc.com",
+  auth: {
+    username: CONNECTOR_SNEH_USERNAME,
+    password: CONNECTOR_SNEH_PASSWORD
+  },
   headers: { Accept: "application/json", "Content-Type": "application/json" }
 })
 function connector_sneh_get_details_read(payload) {
